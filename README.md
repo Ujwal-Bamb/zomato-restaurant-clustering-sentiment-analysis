@@ -1,18 +1,23 @@
-# Zomato Restaurant Clustering & Sentiment Analysis
-
 ## Project Overview
 
-This project analyzes Zomato restaurant and customer review data using
-Exploratory Data Analysis, statistical hypothesis testing, unsupervised
-learning, and NLP-based sentiment classification.
+This project analyzes Zomato restaurant data and customer reviews using
+machine learning, clustering, natural language processing, and sentiment
+classification.
 
-## Objectives
+The project has two major components:
 
-- Analyze restaurant pricing and cuisine patterns
-- Identify restaurant segments using clustering
-- Analyze customer ratings and reviews
-- Perform sentiment classification on customer reviews
-- Identify important words influencing sentiment predictions
+1. Restaurant clustering
+2. Customer review sentiment analysis
+
+Restaurant metadata was analyzed to identify groups of restaurants based
+on characteristics such as cost, cuisine count, ratings, and other
+restaurant features.
+
+Customer reviews were processed using NLP techniques and TF-IDF features,
+followed by supervised sentiment classification.
+
+The final sentiment model is a tuned Logistic Regression model, which was
+tracked using MLflow and deployed through a Streamlit application.
 
 ## Technologies Used
 
@@ -22,84 +27,74 @@ learning, and NLP-based sentiment classification.
 - Matplotlib
 - Seaborn
 - Scikit-learn
-- SciPy
 - NLTK
-- SHAP
-
-## Machine Learning Techniques
-
-### Unsupervised Learning
-
-- K-Means Clustering
-- Agglomerative Hierarchical Clustering
-- PCA
-- Silhouette Score
-- Davies-Bouldin Index
-- Calinski-Harabasz Score
-
-### NLP & Supervised Learning
-
-- Text preprocessing
-- Tokenization
-- Lemmatization
 - TF-IDF
+- K-Means Clustering
+- Agglomerative Clustering
 - Logistic Regression
-- Naive Bayes
-- Linear SVM
-- Hyperparameter Tuning
-- SHAP Explainability
+- Multinomial Naive Bayes
+- Linear SVC
+- SHAP
+- MLflow
+- Joblib
+- Streamlit
+- Git/GitHub
 
-## Key Findings
+## Machine Learning Workflow
 
-- Restaurant cost and customer rating showed a significant positive association.
-- Cuisine variety showed a positive association with restaurant cost.
-- Approximately 63% of rated reviews were classified as Positive based on
-  the project's rating-derived sentiment definition.
-- Restaurant clustering identified groups based on pricing and cuisine
-  characteristics.
-- Tuned Logistic Regression achieved approximately 89.86% F1 Score on
-  the test dataset.
-- SHAP analysis identified influential words used by the sentiment model.
+1. Data Cleaning
+2. Exploratory Data Analysis
+3. Hypothesis Testing
+4. Feature Engineering
+5. Restaurant Clustering
+6. NLP Preprocessing
+7. TF-IDF Feature Extraction
+8. Sentiment Classification
+9. Hyperparameter Tuning
+10. SHAP Explainability
+11. Model Saving
+12. MLflow Experiment Tracking
+13. Streamlit Deployment
 
-## Conclusion
+## Final Sentiment Model
 
-This project analyzed Zomato restaurant and customer review data to
-understand restaurant characteristics, identify restaurant segments,
-and analyze customer sentiment.
+The final model selected for deployment is:
 
-The analysis found significant positive associations between restaurant
-cost and customer ratings, as well as between cuisine variety and cost.
-Clustering was used to group restaurants based on their pricing and
-cuisine characteristics, although the relatively low cluster separation
-suggests that the segments should be interpreted carefully.
+**Tuned Logistic Regression**
 
-For customer review analysis, NLP techniques and TF-IDF were used to
-classify reviews into Positive and Negative sentiment based on
-rating-derived labels. Among the evaluated models, Tuned Logistic
-Regression achieved the highest F1 Score of approximately 89.86%, with
-90.33% Precision and 89.39% Recall on the test set.
+Performance:
 
-SHAP analysis provided additional interpretability by identifying
-important text features influencing the model's predictions.
+- Accuracy: approximately 87%
+- Precision: 90.33%
+- Recall: 89.39%
+- F1 Score: approximately 89.86%
 
-Overall, the project demonstrates how EDA, statistical analysis,
-unsupervised learning, and NLP-based supervised learning can be combined
-to derive useful insights from restaurant and customer review data.
+## Deployment
 
-## Limitations
+The trained model and TF-IDF vectorizer are saved using Joblib.
 
-- Small number of restaurants available for clustering
-- Sentiment labels are derived from ratings rather than independent
-  human annotations
-- Limited clustering features
-- Relatively weak cluster separation
-- Results are specific to the available dataset
+A Streamlit application allows users to enter a restaurant review and
+receive a Positive or Negative sentiment prediction.
 
-## Future Scope
+## Experiment Tracking
 
-- Use a larger and more recent dataset
-- Add more restaurant-level features
-- Perform aspect-based sentiment analysis
-- Build a restaurant recommendation system
-- Develop an interactive Streamlit application
-- Deploy the model using FastAPI or cloud infrastructure
+MLflow was used to track:
+
+- Model parameters
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- Model artifacts
+- TF-IDF vectorizer
+
+## Project Structure
+
+```text
+data/
+models/
+src/
+app.py
+module_6_ML_Submission_project.ipynb
+requirements.txt
+README.md
