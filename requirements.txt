@@ -1,9 +1,12 @@
-pandas
 numpy
+pandas
 matplotlib
 seaborn
-scikit-learn
 scipy
+scikit-learn
 nltk
-shap
+contractions
 joblib
+mlflow
+streamlit
+shap
