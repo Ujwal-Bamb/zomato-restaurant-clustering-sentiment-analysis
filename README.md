@@ -29,11 +29,6 @@
 | ![Sentiment App](docs/screenshots/sentiment_app.png) | ![Clustering PCA](docs/screenshots/clustering_pca.png) |
 | *Review text input with sentiment classification & confidence* | *2D/3D PCA projection of K-Means restaurant archetypes* |
 
-| SHAP Feature Attribution Waterfall | Hypothesis Testing & Distribution Analysis |
-| :---: | :---: |
-| ![SHAP Waterfall](docs/screenshots/shap_waterfall.png) | ![Hypothesis Testing](docs/screenshots/hypothesis_testing.png) |
-| *Word-level SHAP forces driving positive/negative sentiment* | *Spearman correlation and Two-Sample Z-Test outputs* |
-
 ---
 
 ## 🎯 Executive Overview & Business Value
